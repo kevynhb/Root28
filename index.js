@@ -19,10 +19,23 @@ console.log('Inicio Aplicação')
 
 const avaliacao1 = 4
 const avaliacao2 = 8
-let avaliacaoOptativa = 0
+let avaliacaoOptativa = 2
 
 if (avaliacaoOptativa == undefined) {
   avaliacaoOptativa = -1
 
   console.log(avaliacaoOptativa)
 }
+
+function calcularMedia(n1, n2, nOp) {
+  if (n1 < n2) {
+    n1 = n1 < nOp ? nOp : n1
+  } else if (n2 < n1) {
+    n2 = n2 < nOp ? nOp : n2
+  }
+
+  console.log(n1, n2, nOp)
+}
+
+calcularMedia(avaliacao1, avaliacao2, avaliacaoOptativa)
+calcularMedia(5, 7, 8)
