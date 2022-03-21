@@ -17,25 +17,46 @@
 
 console.log('Inicio Aplicação')
 
-const avaliacao1 = 4
-const avaliacao2 = 8
-let avaliacaoOptativa = 2
-
-if (avaliacaoOptativa == undefined) {
-  avaliacaoOptativa = -1
-
-  console.log(avaliacaoOptativa)
-}
+// Aluno 1
+const avaliacao1 = 1
+const avaliacao2 = 6
+let avaliacaoOptativa
 
 function calcularMedia(n1, n2, nOp) {
+  if (nOp == undefined) {
+    nOp = -1
+    console.log(nOp)
+  }
+
   if (n1 < n2) {
     n1 = n1 < nOp ? nOp : n1
   } else if (n2 < n1) {
     n2 = n2 < nOp ? nOp : n2
   }
 
-  console.log(n1, n2, nOp)
+  const media = (n1 + n2) / 2
+  return media
 }
 
-calcularMedia(avaliacao1, avaliacao2, avaliacaoOptativa)
-calcularMedia(5, 7, 8)
+function escreverMensagemMedia(media) {
+  // Se a média for maior igual a 6
+  //   Aprovado
+  // Se a média for menor que 3
+  //   Reprovado
+  // Se média for maior igual a 3 e menor que 6
+  //   Exame
+  if (media >= 6) {
+    console.log(`Aprovado: ${media}`)
+  } else if (media < 3) {
+    console.log(`Reprovado: ${media}`)
+  } else {
+    console.log(`Exame: ${media}`)
+  }
+}
+
+const mediaAluno1 = calcularMedia(avaliacao1, avaliacao2, avaliacaoOptativa)
+//Aluno 2
+const mediaAluno2 = calcularMedia(1, 2, 3)
+
+escreverMensagemMedia(mediaAluno1)
+escreverMensagemMedia(mediaAluno2)
